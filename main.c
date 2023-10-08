@@ -3,20 +3,29 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
-	int sum = 0;
+	int answer = 59;
+	int trial = 0;
 	int num;
-	int i;
 	
-	printf("input a number:");
-	scanf("%d", &num);
-	
-	for (i=0; i<=num; i++)
+	do
 	{
-		sum = sum + i;
+		printf("Guess a number :");
+		scanf("%d", &num);
+		
+		if(num < 59)
+			printf("Low!\n");
+			
+		else if(num > 59)
+			printf("High!\n");
+			
+		trial++;
 	}
 	
-	printf("result is %i\n", sum);
+	while(num != 59);
+	
+	printf("congratulations! trials: %d\n", trial);
+	
 	return 0;
 }
